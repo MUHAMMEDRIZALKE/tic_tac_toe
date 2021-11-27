@@ -22,12 +22,12 @@ class tic_tac_toe:
 
         self.you = 'X'
         self.opponent = 'O'
-        threading.Thread(target= self.handle_connection, args= (client,)).start()
+        threading.Thread(target=self.handle_connection, args=(client,)).start()
         server.close()
 
     def connect_to_game(self, host, port):
         client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        client.connect((host,port))
+        client.connect((host, port))
 
         self.you = 'O'
         self.opponent = 'X'
@@ -104,6 +104,7 @@ class tic_tac_toe:
             print(" | ".join(self.board[row]))
             if row != 2:
                 print("---------")
+
 
 if __name__ == '__main__':
     game = tic_tac_toe()
